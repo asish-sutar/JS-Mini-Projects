@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .color-box {
+            width: 230px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px solid #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Color Flipper</h1>
+        <div class="color-box" id="colorBox"></div>
+        <button id="changeColor">Change Color</button>
+        <button type="reset" id="reset">Reset</button>
+    </div>
+
+</body>
+
+<script>
+    // Generate random RGB
+    const red = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const randColor = `rgb(${red},${blue},${green})`;
+    const change = document.getElementById("changeColor");
+    const reset = document.getElementById("reset");
+
+
+    change.addEventListener("click", colorbox);
+
+    function colorbox() {
+        document.getElementById("colorBox").style.backgroundColor = randColor;
+    }
+
+    reset.addEventListener("click", resetColor);
+
+    function resetColor() {
+        document.getElementById("colorBox").style.backgroundColor = "";
+    }
+</script>
+
+</html>

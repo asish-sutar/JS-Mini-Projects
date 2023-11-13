@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Counter</h3>
+        <h3 id="counter">0</h3>
+        <button type="button" id="decrease">Decrease</button>
+        <button type="reset" id="reset">Reset</button>
+        <button type="button" id="increase">Increase</button>
+    </div>
+
+
+</body>
+
+<script>
+    const counter = document.getElementById("counter")
+    const decrement = document.getElementById("decrease")
+    const increment = document.getElementById("increase")
+    const reset = document.getElementById("reset")
+
+
+
+    let count = 0
+    //event listener
+    decrement.addEventListener("click", () => {
+        count--;
+        counter.textContent = count
+    })
+    increment.addEventListener("click", () => {
+        count++;
+        counter.textContent = count
+    })
+    reset.addEventListener("click", () => {
+        count = 0;
+        counter.textContent = count
+    })
+
+</script>
+
+</html>
